@@ -21,7 +21,7 @@ export default function Navbar({ lang, setLang }: { lang: string, setLang: (l: a
   ];
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-4xl">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-100 w-[95%] max-w-4xl">
       <div className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl border border-white/20 dark:border-slate-800/50 rounded-full px-4 md:px-8 py-3 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
         
         {/* Brand Logo with Glow */}
@@ -47,7 +47,7 @@ export default function Navbar({ lang, setLang }: { lang: string, setLang: (l: a
             </motion.button>
           )}
 
-          <div className="h-6 w-[1px] bg-slate-200 dark:bg-slate-700 mx-1" />
+          <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1" />
 
           {/* Language Selector */}
           <div className="relative">
@@ -67,7 +67,7 @@ export default function Navbar({ lang, setLang }: { lang: string, setLang: (l: a
                   initial={{ opacity: 0, y: 15, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                  className="absolute right-0 mt-4 w-44 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl border border-slate-200 dark:border-slate-800 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.2)] p-2 overflow-hidden z-[110]"
+                  className="absolute right-0 mt-4 w-44 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl border border-slate-200 dark:border-slate-800 rounded-4xl shadow-[0_20px_40px_rgba(0,0,0,0.2)] p-2 overflow-hidden z-110"
                 >
                   {langs.map((l) => (
                     <button
