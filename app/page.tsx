@@ -40,7 +40,7 @@ export default function Home() {
       {/* High-impact Brutalist Hero */}
       <Hero t={t} lang={lang} />
 
-      <div className="max-w-[1400px] mx-auto px-6 space-y-40 mt-20">
+      <div className="max-w-350 mx-auto px-6 space-y-40 mt-20">
         <Skills />
 
         <section id="experience" className="w-full">

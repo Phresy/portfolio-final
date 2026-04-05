@@ -19,6 +19,14 @@ const socials = [
 ];
 
 export default function SocialDock() {
+  // Function to handle smooth scroll to contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
       <motion.div 
@@ -38,7 +46,10 @@ export default function SocialDock() {
           </a>
         ))}
         <div className="w-[1px] h-6 bg-slate-200 dark:bg-slate-800 mx-1" />
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 transition-colors">
+        <button 
+          onClick={scrollToContact}
+          className="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 transition-colors"
+        >
           Hire Me
         </button>
       </motion.div>
