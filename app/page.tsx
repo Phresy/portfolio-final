@@ -7,7 +7,6 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero"; // The new brutalist hero
 import SocialDock from "../components/SocialDock";
 import Skills from "../components/Skills";
-import Experience from "../components/Experience";
 import ProjectCard from "../components/ProjectCard";
 import Contact from "../components/Contact";
 import FooterStats from "../components/FooterStats";
@@ -43,10 +42,7 @@ export default function Home() {
       <div className="max-w-350 mx-auto px-6 space-y-40 mt-20">
         <Skills />
 
-        <section id="experience" className="w-full">
-          <Experience data={e} lang={lang} />
-        </section>
-
+        
         <section id="projects" className="scroll-mt-32">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 border-b border-slate-200 dark:border-slate-800 pb-8">
             <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter">

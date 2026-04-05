@@ -6,11 +6,13 @@ export default function Experience({ data, lang }: { data: any[], lang: string }
   const containerRef = useRef<HTMLDivElement>(null);
   
   return (
+    // FIXED: Added dark:bg-slate-950 to ensure the background actually turns dark
     <section ref={containerRef} className="py-32 relative overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-500">
+      
       {/* Dynamic Aura Background */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-30">
-        <div className="absolute top-1/2 left-1/4 w-125 h-125blue-500/20 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-100 h-100 bg-purple-500/10 blur-[150px] rounded-full animate-bounce" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-1/2 left-1/4 w-125 h-[500px] bg-blue-500/20 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-100 h-[400px] bg-purple-500/10 blur-[150px] rounded-full animate-bounce" style={{ animationDuration: '8s' }} />
       </div>
 
       <div className="max-w-6xl mx-auto px-6">
@@ -36,15 +38,16 @@ export default function Experience({ data, lang }: { data: any[], lang: string }
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="group relative grid grid-cols-1 md:grid-cols-12 gap-8 items-start"
             >
-              {/* Year Column - Fixed Visibility */}
+              {/* Year Column - High Contrast for Dark Mode */}
               <div className="md:col-span-2">
                 <span className="text-4xl md:text-5xl font-black text-slate-300 dark:text-slate-700 group-hover:text-blue-600/40 dark:group-hover:text-blue-400/40 transition-colors duration-500 whitespace-pre-line block">
                   {item.year.replace(" — ", "\n—\n")}
                 </span>
               </div>
 
-              {/* Content Card */}
-              <div className="md:col-span-10 relative bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-800/50 p-8 md:p-12 rounded-[3rem] transition-all hover:border-blue-500/30 hover:shadow-[0_20px_80px_rgba(37,99,235,0.1)]">
+              {/* Content Card - Deep background for Dark Mode */}
+              <div className="md:col-span-10 relative bg-slate-50/50 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200 dark:border-slate-800/50 p-8 md:p-12 rounded-[3rem] transition-all hover:border-blue-500/30 hover:shadow-[0_20px_80px_rgba(37,99,235,0.1)]">
+                
                 {/* Glow Accent */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                 
@@ -64,7 +67,7 @@ export default function Experience({ data, lang }: { data: any[], lang: string }
                   {item.description}
                 </p>
 
-                {/* Sequence Number - Fixed Visibility */}
+                {/* Sequence Number - Subtle visibility */}
                 <div className="absolute bottom-8 right-12 text-8xl font-black text-slate-900/5 dark:text-slate-100/10 select-none pointer-events-none">
                   0{index + 1}
                 </div>
